@@ -35,9 +35,6 @@ const pokemons = [{
 },
 ]
 
-/* let pokemonsAvailable = [];
-let pokemonsChosen = []; */
-
 pokemons.forEach(pokemon => {
     let pokeEl = document.createElement('article');
     pokeEl.classList.add('pokemon');
@@ -51,7 +48,6 @@ pokemons.forEach(pokemon => {
             <p>${pokemon.cp}</p>
         </section> 
     `;
-    /* pokemonsAvailable.push(pokemon); */
     
     document.querySelector('.available').appendChild(pokeEl);
 })
