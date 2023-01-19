@@ -34,6 +34,8 @@ const pokemons = [{
     cp: 121
 },
 ]
+let cardCP;
+let totalCP = 0;
 
 pokemons.forEach(pokemon => {
     let pokeEl = document.createElement('article');
@@ -60,9 +62,15 @@ document.querySelectorAll('.pokemon').forEach((card) => {
 })
 
 function swap(card) {
+    cardCP = parseInt(document.querySelector('p').innerText);
+
     if (document.querySelector(".available").contains(card)) {
         document.querySelector(".chosen").appendChild(card);
     } else {
         document.querySelector(".available").appendChild(card);
+        cardCP = -cardCP;
     }
+
+    totalCP += cardCP;
+    document.querySelector('h4').innerHTML = 'Total CP:' + totalCP;
 };
